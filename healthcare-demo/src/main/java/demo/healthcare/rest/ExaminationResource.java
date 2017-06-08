@@ -36,13 +36,13 @@ public class ExaminationResource {
 	@RequestMapping(value="examination", method=RequestMethod.POST, consumes="application/json")
 	public ResponseEntity<URI> save(@RequestBody Examination examination, HttpServletRequest request){
 		examination = examinationDao.save(examination);
-		return new ResponseEntity<>(URI.create(request.getRequestURL()+"/"+examination.getId()),HttpStatus.CREATED);
+		return new ResponseEntity<>(URI.create(request.getRequestURL()+""+examination.getId()),HttpStatus.CREATED);
 	}
 	
 	@RequestMapping(value="examination", method=RequestMethod.PUT, consumes="application/json")
 	public ResponseEntity<URI> update(@RequestBody Examination examination, HttpServletRequest request){
 		examination = examinationDao.update(examination);
-		return new ResponseEntity<>(URI.create(request.getRequestURL()+"/"+examination.getId()),HttpStatus.CREATED);
+		return new ResponseEntity<>(URI.create(request.getRequestURL()+""+examination.getId()),HttpStatus.CREATED);
 	}
 	
 	@RequestMapping(value="examination/{id}", method=RequestMethod.DELETE)

@@ -53,13 +53,13 @@ public class PatientResource {
 	@RequestMapping(value="patient", method=RequestMethod.POST, consumes="application/json")
 	public ResponseEntity<URI> save(@RequestBody Patient patient, HttpServletRequest request){
 		patient = patientDao.save(patient);
-		return new ResponseEntity<>(URI.create(request.getRequestURL()+"/"+patient.getId()),HttpStatus.CREATED);
+		return new ResponseEntity<>(URI.create(request.getRequestURL()+""+patient.getId()),HttpStatus.CREATED);
 	}
 	
 	@RequestMapping(value="patient", method=RequestMethod.PUT, consumes="application/json")
 	public ResponseEntity<URI> update(@RequestBody Patient patient, HttpServletRequest request){
 		patient = patientDao.update(patient);
-		return new ResponseEntity<>(URI.create(request.getRequestURL()+"/"+patient.getId()),HttpStatus.CREATED);
+		return new ResponseEntity<>(URI.create(request.getRequestURL()+""+patient.getId()),HttpStatus.CREATED);
 	}
 	
 	@RequestMapping(value="patient/{id}", method=RequestMethod.DELETE)

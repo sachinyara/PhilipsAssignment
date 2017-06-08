@@ -62,13 +62,13 @@ public class InstitutionResource {
 	@RequestMapping(value="institution", method=RequestMethod.POST, consumes ="application/json")
 	ResponseEntity<URI> save(@RequestBody Institution institution, HttpServletRequest request){
 		institution = institutionDao.save(institution);
-		return new ResponseEntity<>(URI.create(request.getRequestURL()+"/"+institution.getId()), HttpStatus.CREATED);
+		return new ResponseEntity<>(URI.create(request.getRequestURL()+""+institution.getId()), HttpStatus.CREATED);
 	}
 	
 	@RequestMapping(value="institution", method=RequestMethod.PUT, consumes ="application/json")
 	ResponseEntity<URI> update(@RequestBody Institution institution, HttpServletRequest request){
 		institution = institutionDao.update(institution);
-		return new ResponseEntity<>(URI.create(request.getRequestURL()+"/"+institution.getId()), HttpStatus.ACCEPTED);
+		return new ResponseEntity<>(URI.create(request.getRequestURL()+""+institution.getId()), HttpStatus.ACCEPTED);
 	}
 	
 	@RequestMapping(value="institution/{id}", method=RequestMethod.DELETE)

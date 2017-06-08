@@ -9,7 +9,7 @@ public class Utilities {
 		if(dateOfBirth != null){
 			Period period = Period.between(new Date().toInstant().atZone(ZoneId.systemDefault()).toLocalDate(),
 					dateOfBirth.toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
-			return Math.abs(period.getYears()) + " years " + Math.abs(period.getDays()) + " days";
+			return Math.abs(period.getYears()) + " years " + Math.abs(period.getMonths()) + " months "+ Math.abs(period.getDays()) + " days";
 		}
 		return null;
 	}
