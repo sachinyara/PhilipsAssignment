@@ -6,6 +6,8 @@ Philips assignment to build a POC on healthcare system.
 Please run demo.healthcare.config.Application class to boot this application.
 
 2. Sample resource paths:
+
+
 Institution Resource
 --------------------
 POST http://localhost:8082/healthcare-demo/institution/ 
